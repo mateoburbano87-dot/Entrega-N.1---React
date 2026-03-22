@@ -9,7 +9,7 @@ function BarraNavegacion() {
         <div className="navbar-logo">
           <a href="/">
             <img 
-              src="https://via.placeholder.com/50x50" 
+              src="public/images/Logo-Toman_Tech-Photoroom.png" 
               alt="Mi Tienda Logo"
               className="logo"
             />
