@@ -1,0 +1,49 @@
+:root {
+  --pie-bg: #0f172a;
+  --pie-texto: #e2e8f0;
+  --pie-acento: #38bdf8;
+}
+
+.pie-pagina {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: var(--pie-texto);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 24px;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.pie-contenido {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+}
+
+.pie-marca {
+  font-weight: 700;
+  color: var(--pie-acento);
+}
+
+.pie-separador {
+  opacity: 0.6;
+}
+
+.pie-texto {
+  opacity: 0.9;
+}
+
+.pie-derechos {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .pie-pagina {
+    flex-direction: column;
+    text-align: center;
+  }
+}
