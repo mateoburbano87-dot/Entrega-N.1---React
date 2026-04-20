@@ -6,6 +6,7 @@ import PiePagina from './components/PiePagina';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import Contacto from './pages/Contacto';
+import Carrito from './pages/Carrito';
 import PaginaNoEncontrada from './pages/PaginaNoEncontrada';
 import './App.css';
 
@@ -30,6 +31,9 @@ function App() {
           
           {/* Ruta de contacto */}
           <Route path="/contacto" element={<Contacto />} />
+
+          {/* Ruta del carrito */}
+          <Route path="/carrito" element={<Carrito />} />
           
           {/* Ruta 404 - página no encontrada */}
           <Route path="*" element={<PaginaNoEncontrada />} />

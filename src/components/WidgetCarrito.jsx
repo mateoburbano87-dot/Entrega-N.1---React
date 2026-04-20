@@ -1,17 +1,18 @@
 // src/components/WidgetCarrito.jsx
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import { CartContext } from '../context/CartContext';
 
 function WidgetCarrito() {
-  // Por ahora es estático, luego conectaremos con el contexto del carrito
-  const cantidadItems = 0;
+  const { totalItems } = useContext(CartContext);
   
   return (
-    <div className="cart-widget">
+    <Link to="/carrito" className="cart-widget" aria-label="Ir al carrito">
       <span className="cart-icon">🛒</span>
-      {cantidadItems > 0 && (
-        <span className="cart-count">{cantidadItems}</span>
+      {totalItems > 0 && (
+        <span className="cart-count">{totalItems}</span>
       )}
-    </div>
+    </Link>
   );
 }
 

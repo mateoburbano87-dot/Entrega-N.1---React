@@ -1,14 +1,16 @@
 // src/containers/ItemDetailContainer.jsx
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemCount from '../components/ItemCount';
 import productosData from '../data/productosData';
+import { CartContext } from '../context/CartContext';
 import './ItemDetailContainer.css';
 
 function ItemDetailContainer() {
   const [producto, setProducto] = useState(null);
   const [cargando, setCargando] = useState(true);
   const { id } = useParams();
+  const { addItem } = useContext(CartContext);
 
   useEffect(function() {
     Promise.resolve().then(function() {
@@ -39,8 +41,10 @@ function ItemDetailContainer() {
   };
 
   const onAdd = function(cantidad) {
-    alert(`Agregaste ${cantidad} ${producto.nombre}(s) al carrito`);
-    // Aquí después implementaremos la lógica del carrito
+    if (!producto) {
+      return;
+    }
+    addItem(producto, cantidad);
   };
 
   if (cargando) {
